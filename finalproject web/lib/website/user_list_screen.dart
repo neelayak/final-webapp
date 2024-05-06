@@ -74,6 +74,19 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                               children: [
                                 RichText(
                                   text: new TextSpan(
+                                    text: 'TimeStamp : ',
+                                    style: new TextStyle(
+                                        fontWeight: FontWeight.bold),
+                                    children: <TextSpan>[
+                                      new TextSpan(
+                                          text: list[index].timestamp!,
+                                          style: new TextStyle(
+                                              fontWeight: FontWeight.w600)),
+                                    ],
+                                  ),
+                                ),
+                                RichText(
+                                  text: new TextSpan(
                                     text: 'Id : ',
                                     style: new TextStyle(
                                         fontWeight: FontWeight.bold),
@@ -191,7 +204,8 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
         'id': value['id'],
         'patient_age': value['patient_age'],
         'hospital_name': value['hospital_name'],
-        'age': value['age']
+        'age': value['age'],
+        'timestamp': value['timestamp']
       });
       print(data.id);
       list.add(data);
